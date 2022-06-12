@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(items));
-  }, [item]);
+  }, [items]);
 
   const newItem = () => {
     if (item.trim() !== "") {
@@ -63,7 +63,8 @@ function App() {
         </button>
       </div>
 
-      {items.map((item, index) => {
+      {
+      items.map((item, index) => {
         return (
           <Draggable
             key={index}
